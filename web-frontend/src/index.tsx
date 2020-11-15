@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
-import "./mystyle.css";
+import "./mystyle.scss";
 
 class MyButton extends React.Component<{}, { liked: boolean }> {
   constructor(props) {
