@@ -39,45 +39,15 @@ class DeckInfo extends React.Component {
   }
 }
 
-class CurrentTask extends React.Component {
+class DeckTask extends React.Component {
   render() {
-    return <div>Study Task</div>;
+    return <div className="deck-task">Study Task</div>;
   }
 }
 
 class DeckProgress extends React.Component {
   render() {
-    return <div>Progress</div>;
-  }
-}
-
-class AppBodyLeftSidebar extends React.Component {
-  render() {
-    return (
-      <div className="app-body-left-sidebar">
-        <DeckInfo />
-      </div>
-    );
-  }
-}
-
-class AppBodyCenter extends React.Component {
-  render() {
-    return (
-      <div className="app-body-center">
-        <CurrentTask />
-      </div>
-    );
-  }
-}
-
-class AppBpdyRightSidebar extends React.Component {
-  render() {
-    return (
-      <div className="app-body-right-sidebar">
-        <DeckProgress />
-      </div>
-    );
+    return <div className="deck-progress">Progress</div>;
   }
 }
 
@@ -85,9 +55,9 @@ class AppBody extends React.Component {
   render() {
     return (
       <div className="app-body">
-        <AppBodyLeftSidebar />
-        <AppBodyCenter />
-        <AppBpdyRightSidebar />
+        <DeckInfo />
+        <DeckTask />
+        <DeckProgress />
       </div>
     );
   }
