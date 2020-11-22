@@ -1,0 +1,60 @@
+$max-width: 1200px;
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.app-header {
+  background-color: aquamarine;
+  width: 100%;
+}
+
+.app-header-content {
+  background-color: azure;
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+.app-body {
+  background-color: burlywood;
+  margin: 0 auto;
+  max-width: $max-width;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  height: 400px;
+  clear: both;
+}
+
+.app-body-left-sidebar {
+  background-color: lemonchiffon;
+}
+
+.app-body-center {
+  background-color: lightblue;
+}
+
+.app-body-right-sidebar {
+  background-color: moccasin;
+}
+
+.app-header-name {
+  font-size: large;
+  padding: 0.5rem;
+  float: left;
+}
+
+.app-header-right {
+  background-color: olive;
+}
+
+.app-header-right > nav > ul {
+  list-style-type: none;
+}
+
+.app-header-right > nav > ul > li {
+  display: inline;
+  padding: 0.5rem;
+  float: right;
+}
