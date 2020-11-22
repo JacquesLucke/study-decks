@@ -30,7 +30,7 @@ $max-width: 80em;
   clear: both;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 60em) {
   .app-body {
     grid-template-areas: "info task task task progress";
   }
