@@ -55,11 +55,45 @@ function DeckInfo() {
 }
 
 function DeckTask() {
-  return <div className="deck-task">Study Task</div>;
+  return (
+    <div className="deck-task">
+      <MultipleChoiceTask
+        question="What is X?"
+        answers={["Is it A?", "Or maybe B?", "Or just C?"]}
+      />
+      <br />
+      <SubmitTaskButton />
+    </div>
+  );
 }
 
 function DeckProgress() {
   return <div className="deck-progress">Progress</div>;
+}
+
+function MultipleChoiceTask({
+  question,
+  answers,
+}: {
+  question: string;
+  answers: string[];
+}) {
+  return (
+    <div>
+      <p>{question}</p>
+      {answers.map((answer) => (
+        <>
+          <input type="checkbox" />
+          <label>{answer}</label>
+          <br />
+        </>
+      ))}
+    </div>
+  );
+}
+
+function SubmitTaskButton() {
+  return <button>Submit</button>;
 }
 
 const container = document.querySelector("#app-div");
