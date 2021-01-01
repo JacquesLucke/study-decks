@@ -1,3 +1,5 @@
 .vscode
+app-server/node_modules
+app-server/dist
 web-frontend/node_modules
 web-frontend/dist
