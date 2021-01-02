@@ -34,6 +34,14 @@ const init_server = async () => {
     },
   });
 
+  server.route({
+    method: "GET",
+    path: "/question",
+    handler: (request) => {
+      return { question: "Is this a question?", answers: ["a", "bb", "ccc"] };
+    },
+  });
+
   await server.start();
   console.log("Server running on %s", server.info.uri);
 };

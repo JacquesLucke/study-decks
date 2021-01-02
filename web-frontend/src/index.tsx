@@ -55,16 +55,28 @@ function DeckInfo() {
 }
 
 function DeckTask() {
-  return (
-    <div className="deck-task">
-      <MultipleChoiceTask
-        question="What is X?"
-        answers={["Is it A?", "Or maybe B?", "Or just C?"]}
-      />
-      <br />
-      <SubmitTaskButton />
-    </div>
-  );
+  const [question, setQuestion] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch("./question").then(async (response) => {
+      const response_json = await response.json();
+      setTimeout(() => setQuestion(response_json), 1000);
+    });
+  }, []);
+
+  let current_task = <p>Loading...</p>;
+
+  if (question !== null) {
+    current_task = (
+      <>
+        <MultipleChoiceTask {...question} />
+        <br />
+        <SubmitTaskButton />
+      </>
+    );
+  }
+
+  return <div className="deck-task">{current_task}</div>;
 }
 
 function DeckProgress() {
