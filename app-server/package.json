@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node ./dist/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./dist/main.js"
   },
   "author": "Jacques Lucke",
   "license": "MIT",
