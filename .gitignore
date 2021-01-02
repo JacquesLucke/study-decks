@@ -1,5 +1,5 @@
 .vscode
 app-server/node_modules
-app-server/dist
+app-server/build
 web-frontend/node_modules
-web-frontend/dist
+web-frontend/build

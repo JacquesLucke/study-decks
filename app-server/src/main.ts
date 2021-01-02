@@ -7,10 +7,10 @@ process.on("unhandledRejection", (err) => {
 });
 
 const public_directory = Path.dirname(Path.dirname(__dirname));
-const web_frontend_dist_directory = Path.join(
+const web_frontend_build_directory = Path.join(
   public_directory,
   "web-frontend",
-  "dist"
+  "build"
 );
 console.log("Public Directory: " + public_directory);
 
@@ -29,7 +29,7 @@ const init_server = async () => {
     path: "/{param*}",
     handler: {
       directory: {
-        path: web_frontend_dist_directory,
+        path: web_frontend_build_directory,
       },
     },
   });
