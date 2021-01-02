@@ -81,12 +81,12 @@ function MultipleChoiceTask({
   return (
     <div>
       <p>{question}</p>
-      {answers.map((answer) => (
-        <>
+      {answers.map((answer, index) => (
+        <div key={index}>
           <input type="checkbox" />
           <label>{answer}</label>
           <br />
-        </>
+        </div>
       ))}
     </div>
   );

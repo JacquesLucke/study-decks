@@ -17,7 +17,7 @@ console.log("Public Directory: " + public_directory);
 /* Use init function, because await cannot be used outside of functions yet. */
 const init_server = async () => {
   const server = Hapi.server({
-    port: 3000,
+    port: 8000,
     host: "0.0.0.0",
   });
   await server.register(require("@hapi/inert"));
