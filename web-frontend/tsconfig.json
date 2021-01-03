@@ -4,6 +4,8 @@
     "sourceMap": true,
 
     // Needed so that dynamic imports are working.
-    "module": "esnext"
+    "module": "esnext",
+
+    "moduleResolution": "node"
   }
 }
