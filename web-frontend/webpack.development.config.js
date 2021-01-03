@@ -7,7 +7,8 @@ module.exports = {
   devtool: "inline-source-map",
   entry: "./src/index.tsx",
   output: {
-    filename: "main.js",
+    filename: "[name].bundle.js",
+    chunkFilename: "[name].chunk.js",
     path: Path.resolve(__dirname, "build"),
   },
   module: {
