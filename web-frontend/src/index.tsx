@@ -1,13 +1,14 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
 import "./app-style.scss";
+import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <AppHeader />
       <AppBody />
-    </div>
+    </BrowserRouter>
   );
 }
 
@@ -19,9 +20,15 @@ function AppHeader() {
         <div className="app-header-right">
           <nav>
             <ul>
-              <li>Log In</li>
-              <li>About</li>
-              <li>Home</li>
+              <li>
+                <Link to="/login">Log In</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
             </ul>
           </nav>
         </div>
@@ -33,9 +40,19 @@ function AppHeader() {
 function AppBody() {
   return (
     <div className="app-body">
-      <DeckInfo />
-      <DeckTask />
-      <DeckProgress />
+      <Switch>
+        <Route exact path="/">
+          <DeckInfo />
+          <DeckTask />
+          <DeckProgress />
+        </Route>
+        <Route exact path="/login">
+          Login
+        </Route>
+        <Route exact path="/about">
+          About
+        </Route>
+      </Switch>
     </div>
   );
 }
