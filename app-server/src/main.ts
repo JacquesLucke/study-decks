@@ -12,6 +12,11 @@ const web_frontend_build_directory = Path.join(
   "web-frontend",
   "build"
 );
+const static_files_directory = Path.join(
+  web_frontend_build_directory,
+  "static"
+);
+
 console.log("Public Directory: " + public_directory);
 
 /* Use init function, because await cannot be used outside of functions yet. */
@@ -24,12 +29,24 @@ const init_server = async () => {
 
   server.path(public_directory);
 
+  // Always reply with main index.html file, unless some of the other routes apply.
   server.route({
     method: "GET",
-    path: "/{param*}",
+    path: "/{params*}",
+    handler: {
+      file: Path.resolve(web_frontend_build_directory, "index.html"),
+    },
+  });
+
+  // Access static files.
+  server.route({
+    method: "GET",
+    path: "/static/{param*}",
     handler: {
       directory: {
-        path: web_frontend_build_directory,
+        path: static_files_directory,
+        index: false,
+        listing: false,
       },
     },
   });
