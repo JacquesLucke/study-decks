@@ -1,7 +1,13 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
 import "./app-style.scss";
-import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter,
+  Link,
+  Switch,
+  Route,
+  useParams,
+} from "react-router-dom";
 
 function App() {
   return (
@@ -46,6 +52,9 @@ function AppBody() {
           <DeckTask />
           <DeckProgress />
         </Route>
+        <Route path="/deck/:deck_name">
+          <Deck />
+        </Route>
         <Route exact path="/login">
           Login
         </Route>
@@ -56,6 +65,11 @@ function AppBody() {
       </Switch>
     </div>
   );
+}
+
+function Deck() {
+  const { deck_name } = useParams();
+  return <div>Deck: {deck_name}</div>;
 }
 
 function DeckInfo() {

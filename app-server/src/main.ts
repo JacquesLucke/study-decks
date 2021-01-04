@@ -29,14 +29,21 @@ const init_server = async () => {
 
   server.path(public_directory);
 
-  // Always reply with main index.html file, unless some of the other routes apply.
-  server.route({
-    method: "GET",
-    path: "/{params*}",
-    handler: {
-      file: Path.resolve(web_frontend_build_directory, "index.html"),
-    },
-  });
+  const add_index_file_route = (path: string) => {
+    server.route({
+      method: "GET",
+      path,
+      handler: {
+        file: Path.resolve(web_frontend_build_directory, "index.html"),
+      },
+    });
+  };
+
+  // Those paths return the same index.html file. Routing is handled on the client side.
+  add_index_file_route("/");
+  add_index_file_route("/about");
+  add_index_file_route("/login");
+  add_index_file_route("/deck/{deck_name*}");
 
   // Access static files.
   server.route({

@@ -10,6 +10,7 @@ module.exports = {
     filename: "static/[name].bundle.js",
     chunkFilename: "static/[name].chunk.js",
     path: Path.resolve(__dirname, "build"),
+    publicPath: "/",
   },
   module: {
     rules: [
