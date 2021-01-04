@@ -52,6 +52,7 @@ function AppBody() {
         <Route exact path="/about">
           About
         </Route>
+        <Route path="/">Page not found.</Route>
       </Switch>
     </div>
   );
