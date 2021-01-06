@@ -60,9 +60,23 @@ const init_server = async () => {
 
   server.route({
     method: "GET",
-    path: "/question",
+    path: "/api/deck/{deck_name*}",
     handler: (request) => {
-      return { question: "Is this a question?", answers: ["a", "bb", "ccc"] };
+      return {
+        author: "Jacques Lucke",
+        tasks: [
+          {
+            type: "multiple-choice",
+            question: `Is this a MC question? (${request.params.deck_name})`,
+            answers: ["yes", "no", "maybe"],
+          },
+          {
+            type: "multiple-choice",
+            question: `Another question: ${request.params.deck_name}`,
+            answers: ["10%", "50%", "100%"],
+          },
+        ],
+      };
     },
   });
 

@@ -21,17 +21,20 @@ $max-width: 80em;
   background-color: burlywood;
   margin: 0 auto;
   max-width: $max-width;
+  clear: both;
+}
+
+.deck {
   display: grid;
   grid-template-areas:
     "task"
     "progress"
     "info";
   height: 400px;
-  clear: both;
 }
 
 @media (min-width: 60em) {
-  .app-body {
+  .deck {
     grid-template-areas: "info task task task progress";
   }
 }
