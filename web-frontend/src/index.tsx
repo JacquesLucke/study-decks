@@ -166,6 +166,7 @@ function DeckTask({ deck_data }: { deck_data: DeckData }) {
       {task_element}
       <br />
       <SubmitTaskButton />
+      <Link to={`./${task_index - 1}`}>Back</Link>
       <Link to={`./${task_index + 1}`}>Next</Link>
     </div>
   );
