@@ -6,6 +6,7 @@ import {
   Link,
   Switch,
   Route,
+  Redirect,
   useParams,
 } from "react-router-dom";
 
@@ -148,7 +149,11 @@ function DeckTaskArea({ deck_data }: { deck_data: DeckData }) {
 
 function DeckTask({ deck_data }: { deck_data: DeckData }) {
   const { task_id } = useParams();
-  const task = deck_data.tasks[task_id];
+  const task_index = parseInt(task_id);
+  const task = deck_data.tasks[task_index];
+  if (task === undefined) {
+    return <Redirect to="." />;
+  }
 
   let task_element = <div>Unknown task type.</div>;
   if (task.type == "multiple-choice") {
@@ -161,6 +166,7 @@ function DeckTask({ deck_data }: { deck_data: DeckData }) {
       {task_element}
       <br />
       <SubmitTaskButton />
+      <Link to={`./${task_index + 1}`}>Next</Link>
     </div>
   );
 }
