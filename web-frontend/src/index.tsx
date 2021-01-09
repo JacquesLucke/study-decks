@@ -53,7 +53,7 @@ function AppBody() {
         <Route exact path="/">
           Home
         </Route>
-        <Route path="/deck/:deck_name">
+        <Route path="/deck/:deck_id">
           <Deck />
         </Route>
         <Route exact path="/login">
@@ -69,18 +69,19 @@ function AppBody() {
 }
 
 function Deck() {
-  const { deck_name } = useParams();
+  const { deck_id } = useParams();
   const [deck_data, setDeckData] = React.useState<DeckData | undefined>();
 
   React.useEffect(() => {
-    get_deck_data(deck_name).then((loaded_deck_data) => {
+    get_deck_data(deck_id).then((loaded_deck_data) => {
       setDeckData(loaded_deck_data);
     });
-  }, []);
+  }, [deck_id]);
 
   if (deck_data === undefined) {
     return <div>Loading...</div>;
   }
+
   if (deck_data.tasks.length == 0) {
     return <div>There are no tasks.</div>;
   }
@@ -88,7 +89,7 @@ function Deck() {
   return (
     <div className="deck">
       <DeckInfo deck_data={deck_data} />
-      <DeckTask task={deck_data.tasks[0]} />
+      <DeckTaskArea deck_data={deck_data} />
       <DeckProgress />
     </div>
   );
@@ -104,13 +105,15 @@ interface MultipleChoiceTask extends Task {
 }
 
 interface DeckData {
+  id: string;
   author: string;
   tasks: Task[];
 }
 
-async function get_deck_data(deck_name: string): Promise<DeckData> {
-  const response = await fetch(`/api/deck/${deck_name}`);
+async function get_deck_data(deck_id: string): Promise<DeckData> {
+  const response = await fetch(`/api/deck/${deck_id}`);
   const response_json = await response.json();
+  response_json.id = deck_id;
   return response_json;
 }
 
@@ -128,7 +131,25 @@ function DeckInfo({ deck_data }: { deck_data: DeckData }) {
   );
 }
 
-function DeckTask({ task }: { task: Task }) {
+function DeckTaskArea({ deck_data }: { deck_data: DeckData }) {
+  return (
+    <div className="deck-task">
+      <Switch>
+        <Route exact path="/deck/:deck_id">
+          <Link to={`/deck/${deck_data.id}/0`}>Start</Link>
+        </Route>
+        <Route path="/deck/:deck_id/:task_id">
+          <DeckTask deck_data={deck_data} />
+        </Route>
+      </Switch>
+    </div>
+  );
+}
+
+function DeckTask({ deck_data }: { deck_data: DeckData }) {
+  const { task_id } = useParams();
+  const task = deck_data.tasks[task_id];
+
   let task_element = <div>Unknown task type.</div>;
   if (task.type == "multiple-choice") {
     const multiple_choice_task = task as MultipleChoiceTask;

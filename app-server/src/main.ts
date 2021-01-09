@@ -43,7 +43,7 @@ const init_server = async () => {
   add_index_file_route("/");
   add_index_file_route("/about");
   add_index_file_route("/login");
-  add_index_file_route("/deck/{deck_name*}");
+  add_index_file_route("/deck/{deck_id}/{task_id?}");
 
   // Access static files.
   server.route({
@@ -60,19 +60,19 @@ const init_server = async () => {
 
   server.route({
     method: "GET",
-    path: "/api/deck/{deck_name*}",
+    path: "/api/deck/{deck_id}",
     handler: (request) => {
       return {
         author: "Jacques Lucke",
         tasks: [
           {
             type: "multiple-choice",
-            question: `Is this a MC question? (${request.params.deck_name})`,
+            question: `Is this a MC question? (${request.params.deck_id})`,
             answers: ["yes", "no", "maybe"],
           },
           {
             type: "multiple-choice",
-            question: `Another question: ${request.params.deck_name}`,
+            question: `Another question: ${request.params.deck_id}`,
             answers: ["10%", "50%", "100%"],
           },
         ],
