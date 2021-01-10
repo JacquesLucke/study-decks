@@ -11,13 +11,15 @@ export function TaskView({ task }) {
 function get_task_view_component(task_type: string) {
   switch (task_type) {
     case "multiple-choice":
-      return MultipleChoiceTask;
+      return MultipleChoiceTaskView;
+    case "just-text":
+      return JustTextTaskView;
     default:
       return undefined;
   }
 }
 
-function MultipleChoiceTask({ task }) {
+function MultipleChoiceTaskView({ task }) {
   const on_submit = () => {
     console.log("Submit");
   };
@@ -35,6 +37,10 @@ function MultipleChoiceTask({ task }) {
       <SubmitButton on_submit={on_submit} />
     </div>
   );
+}
+
+function JustTextTaskView({ task }) {
+  return <div>{task.text}</div>;
 }
 
 function SubmitButton({ on_submit }) {

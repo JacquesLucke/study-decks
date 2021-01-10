@@ -71,6 +71,10 @@ const init_server = async () => {
             answers: ["yes", "no", "maybe"],
           },
           {
+            type: "just-text",
+            text: `Just some text with ${request.params.deck_id}`,
+          },
+          {
             type: "multiple-choice",
             question: `Another question: ${request.params.deck_id}`,
             answers: ["10%", "50%", "100%"],
