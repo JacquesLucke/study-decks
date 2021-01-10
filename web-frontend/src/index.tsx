@@ -10,6 +10,8 @@ import {
   useParams,
 } from "react-router-dom";
 import { TaskView } from "./task_view";
+import { AboutPage } from "./about_page";
+import { HomePage } from "./home_page";
 
 function App() {
   return (
@@ -53,7 +55,7 @@ function AppBody() {
     <div className="app-body">
       <Switch>
         <Route exact path="/">
-          Home
+          <HomePage />
         </Route>
         <Route path="/deck/:deck_id">
           <Deck />
@@ -62,7 +64,7 @@ function AppBody() {
           Login
         </Route>
         <Route exact path="/about">
-          About
+          <AboutPage />
         </Route>
         <Route path="/">Page not found.</Route>
       </Switch>
