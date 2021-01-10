@@ -72,7 +72,7 @@ function AppBody() {
 
 function Deck() {
   const { deck_id } = useParams();
-  const [deck_data, setDeckData] = React.useState<DeckData | undefined>();
+  const [deck_data, setDeckData] = React.useState();
 
   React.useEffect(() => {
     get_deck_data(deck_id).then((loaded_deck_data) => {
@@ -84,10 +84,6 @@ function Deck() {
     return <div>Loading...</div>;
   }
 
-  if (deck_data.tasks.length == 0) {
-    return <div>There are no tasks.</div>;
-  }
-
   return (
     <div className="deck">
       <DeckInfo deck_data={deck_data} />
@@ -97,29 +93,14 @@ function Deck() {
   );
 }
 
-interface Task {
-  type: "multiple-choice";
-}
-
-interface MultipleChoiceTask extends Task {
-  question: string;
-  answers: string[];
-}
-
-interface DeckData {
-  id: string;
-  author: string;
-  tasks: Task[];
-}
-
-async function get_deck_data(deck_id: string): Promise<DeckData> {
+async function get_deck_data(deck_id: string) {
   const response = await fetch(`/api/deck/${deck_id}`);
   const response_json = await response.json();
   response_json.id = deck_id;
   return response_json;
 }
 
-function DeckInfo({ deck_data }: { deck_data: DeckData }) {
+function DeckInfo({ deck_data }) {
   return (
     <div className="deck-info">
       <p>You are learning:</p>
@@ -133,7 +114,7 @@ function DeckInfo({ deck_data }: { deck_data: DeckData }) {
   );
 }
 
-function DeckTaskArea({ deck_data }: { deck_data: DeckData }) {
+function DeckTaskArea({ deck_data }) {
   return (
     <div className="deck-task">
       <Switch>
@@ -148,7 +129,7 @@ function DeckTaskArea({ deck_data }: { deck_data: DeckData }) {
   );
 }
 
-function DeckTask({ deck_data }: { deck_data: DeckData }) {
+function DeckTask({ deck_data }) {
   const { task_id } = useParams();
   const task_index = parseInt(task_id);
   const task = deck_data.tasks[task_index];
