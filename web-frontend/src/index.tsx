@@ -9,6 +9,7 @@ import {
   Redirect,
   useParams,
 } from "react-router-dom";
+import { TaskView } from "./task_view";
 
 function App() {
   return (
@@ -155,18 +156,12 @@ function DeckTask({ deck_data }: { deck_data: DeckData }) {
     return <Redirect to="." />;
   }
 
-  let task_element = <div>Unknown task type.</div>;
-  if (task.type == "multiple-choice") {
-    const multiple_choice_task = task as MultipleChoiceTask;
-    task_element = <MultipleChoiceTask {...multiple_choice_task} />;
-  }
-
   return (
     <div className="deck-task">
-      {task_element}
+      <TaskView task={task} />
       <br />
-      <SubmitTaskButton />
       <Link to={`./${task_index - 1}`}>Back</Link>
+      <br />
       <Link to={`./${task_index + 1}`}>Next</Link>
     </div>
   );
@@ -174,31 +169,6 @@ function DeckTask({ deck_data }: { deck_data: DeckData }) {
 
 function DeckProgress() {
   return <div className="deck-progress">Progress</div>;
-}
-
-function MultipleChoiceTask({
-  question,
-  answers,
-}: {
-  question: string;
-  answers: string[];
-}) {
-  return (
-    <div>
-      <p>{question}</p>
-      {answers.map((answer, index) => (
-        <div key={index}>
-          <input type="checkbox" />
-          <label>{answer}</label>
-          <br />
-        </div>
-      ))}
-    </div>
-  );
-}
-
-function SubmitTaskButton() {
-  return <button>Submit</button>;
 }
 
 const container = document.querySelector("#app-div");
