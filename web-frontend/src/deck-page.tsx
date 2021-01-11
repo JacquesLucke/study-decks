@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link, Switch, Route, Redirect, useParams } from "react-router-dom";
-import { TaskView } from "./task_view";
+import { TaskView } from "./task-view";
 
 export function DeckPage() {
   const { deck_id } = useParams();

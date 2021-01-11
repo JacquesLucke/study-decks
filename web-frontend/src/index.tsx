@@ -3,10 +3,10 @@ import * as ReactDom from "react-dom";
 import "./app-style.scss";
 import { BrowserRouter, Link, Switch, Route } from "react-router-dom";
 
-import { AboutPage } from "./about_page";
-import { HomePage } from "./home_page";
-import { LoginPage } from "./login_page";
-import { DeckPage } from "./deck_page";
+import { AboutPage } from "./about-page";
+import { HomePage } from "./home-page";
+import { LoginPage } from "./login-page";
+import { DeckPage } from "./deck-page";
 
 function App() {
   return (

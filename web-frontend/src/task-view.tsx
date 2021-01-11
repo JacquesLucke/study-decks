@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./task_view.scss";
+import "./task-view.scss";
 
 export function TaskView({ task }) {
   const Component = get_task_view_component(task.type);
