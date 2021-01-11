@@ -1,4 +1,5 @@
 import * as React from "react";
+import "./task_view.scss";
 
 export function TaskView({ task }) {
   const Component = get_task_view_component(task.type);
@@ -27,14 +28,25 @@ function MultipleChoiceTaskView({ task }) {
   return (
     <div>
       <p>{task.question}</p>
-      {task.answers.map((answer, index) => (
-        <div key={index}>
-          <input type="checkbox" />
-          <label>{answer}</label>
-          <br />
-        </div>
-      ))}
+      <ul className="multiple-choice-options">
+        {task.answers.map((answer, index) => (
+          <li key={index}>
+            <MultipleChoiceOption id={index} text={answer} />
+          </li>
+        ))}
+      </ul>
       <SubmitButton on_submit={on_submit} />
+    </div>
+  );
+}
+
+function MultipleChoiceOption({ id, text }) {
+  return (
+    <div className="multiple-choice-option">
+      <input className="multiple-choice-checkbox" type="checkbox" id={id} />
+      <label className="multiple-choice-label" htmlFor={id}>
+        {text}
+      </label>
     </div>
   );
 }

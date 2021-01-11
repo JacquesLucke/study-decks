@@ -1,0 +1,38 @@
+.multiple-choice-options {
+  list-style: none;
+}
+
+.multiple-choice-option {
+  cursor: pointer;
+  display: flex;
+}
+
+.multiple-choice-checkbox {
+  display: none;
+}
+
+.multiple-choice-label::before {
+  width: 2em;
+  height: 2em;
+  margin: 1em;
+  display: flex;
+  content: "";
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.multiple-choice-checkbox:checked + .multiple-choice-label::before {
+  background-color: lightsalmon;
+  content: "\2713";
+}
+
+.multiple-choice-label {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
