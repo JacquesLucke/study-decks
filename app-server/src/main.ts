@@ -77,7 +77,7 @@ const init_server = async () => {
           {
             type: "multiple-choice",
             question: `Another question: ${request.params.deck_id}`,
-            answers: ["10%", "50%", "100%"],
+            answers: ["10%", "50%", "70%", "80%", "100%"],
           },
         ],
       };
