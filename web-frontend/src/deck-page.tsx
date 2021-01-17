@@ -40,8 +40,6 @@ function DeckInfo({ deck_data }) {
       <hr />
       <p>Author: {deck_data.author}</p>
       <p>Questions: {deck_data.tasks.length}</p>
-      <p>Released: XX</p>
-      <p>Last Modified: XX</p>
     </div>
   );
 }
