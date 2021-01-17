@@ -20,4 +20,5 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
+        file: ./dockerfile.web-server
         tags: jacqueslucke/study-decks-app-server
