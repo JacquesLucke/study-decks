@@ -1,0 +1,272 @@
+[
+    {
+        "link": "https://medium.com/luisfredgs/automatic-text-summarization-with-machine-learning-an-overview-68ded5717a25",
+        "name": "Automatic Text Summarization with Machine Learning - An overview",
+        "tasks": [
+            {
+                "type": "freetext",
+                "body": "What are use cases of summarization?",
+                "possible_answers": [
+                    "Headline generation",
+                    "Text classification",
+                    "Question answering",
+                    "News summarization"
+                ]
+            },
+            {
+                "type": "freetext",
+                "body": "Why do we want to automate it?",
+                "possible_answers": [
+                    "time expensive",
+                    "generally laborious task"
+                ]
+            },
+            {
+                "type": "freetext",
+                "body": "What are the two main approaches for automatic summarization?",
+                "possible_answers": [
+                    "Extractive",
+                    "Abstractive"
+                ]
+            },
+            {
+                "type": "freetext",
+                "body": "How does the extractive approach generally work?",
+                "answer": "Sentences are given a relevance score and the summary is comprised of the sentences with the highest scores."
+            },
+            {
+                "type": "freetext",
+                "body": "How does the abstractive approach generally work?",
+                "answer": "First the text is encoded in some intermediate abstract form and then the summary is newly generated text based on the representation in the abstract latent space."
+            },
+            {
+                "type": "multiple-choice",
+                "body": "Which approach is simpler?",
+                "possible_answers": [
+                    "Extractive",
+                    "Abstractive"
+                ],
+                "correct_answer": "Extractive"
+            },
+            {
+                "type": "multiple-choice",
+                "body": "Which approach can be expected to generate better results if done well?",
+                "possible_answers": [
+                    "Extractive",
+                    "Abstractive"
+                ],
+                "correct_answer": "Abstractive"
+            },
+            {
+                "type": "freetext",
+                "body": "What are the benefits of the abstractive approach?",
+                "answer": "The output is not limited to the sentences and words provided by the input text. The summary can be more concise when new sentences are generated."
+            }
+        ]
+    },
+    {
+        "link": "https://www.youtube.com/watch?v=UHiUYj5EA0w",
+        "name": "Productivity and Growth: Crash Course Economics #6",
+        "tasks": [
+            {
+                "type": "freetext",
+                "body": "What does GDP stand for?",
+                "answer": "Gross domestic product"
+            },
+            {
+                "type": "freetext",
+                "body": "How are countries generally classified into rich and poor?",
+                "answer": "Based on their GDP per capita."
+            },
+            {
+                "type": "freetext",
+                "body": "What is GDP per capita?",
+                "answer": "The GDP of a country divided by the number of residents."
+            },
+            {
+                "type": "yes-no",
+                "body": "Can a country with higher GDP be considered poorer than one with lower GDP?",
+                "answer": "yes",
+                "explanation": "A country with higher GDP but more residents can have a lower GDP per capita."
+            },
+            {
+                "type": "freetext",
+                "body": "How do the GDP per capita and standards of living in a country correlate?"
+            },
+            {
+                "type": "freetext",
+                "body": "Role of natural resources for GDP per capita?",
+                "explanation": "Relatively little correlation"
+            },
+            {
+                "type": "freetext",
+                "body": "What is the driving factor for a high GDP per capita?",
+                "answer": "Productivity"
+            },
+            {
+                "type": "freetext",
+                "body": "What is productivity?",
+                "answers": [
+                    "The amount of value produced by a person in a given amount of time."
+                ]
+            },
+            {
+                "type": "freetext",
+                "body": "What is required for high productivity (factors of production)?",
+                "answers": [
+                    "Land, which includes all natural resources.",
+                    "Labor, the people.",
+                    "Capital, which includes machines, factories and infrastructure.",
+                    "Human Capital, the workers education, knowledges and skills."
+                ]
+            },
+            {
+                "type": "freetext",
+                "body": "What is technology?",
+                "answer": "The sum total of knowledge and information that society has acquired concerning the use of resources to produce goods and services."
+            },
+            {
+                "type": "freetext",
+                "body": "How does technology influence productivity?",
+                "answer": "Better technology increases productivity because goods and services can be produced faster, better and/or cheaper."
+            },
+            {
+                "type": "freetext",
+                "body": "When did computers at workplaces really start to become productivity boosters?",
+                "answer": "When they were connected to form the internet."
+            }
+        ]
+    },
+    {
+        "link": "https://www.youtube.com/watch?v=gu0vyDeJDeY",
+        "name": "How To Survive Poison",
+        "tasks": [
+            {
+                "type": "multiple-choice",
+                "body": "Approximately how many cups of coffee at once would be deadly?",
+                "possible_answers": [
+                    "20",
+                    "90",
+                    "130"
+                ],
+                "correct_answer": "90"
+            },
+            {
+                "type": "freetext",
+                "body": "Why can people drink more coffee than that in their lifetime?",
+                "answer": "The human body has ways to get rid of the dangerous substances. Caffeine gets metabolized by the liver into other organic molecules."
+            },
+            {
+                "type": "freetext",
+                "body": "Why are cyanide packed apple seeds not dangerous even though the body can only tolerate very small amounts of it?",
+                "answer": "Our body converts it to vitamin B12 very quickly before large amounts of it build up?"
+            },
+            {
+                "type": "freetext",
+                "body": "Why is lead dangerous even though our body can tolerate much more of it than cyanide?",
+                "answer": "It takes much longer for lead to leave the body, because it gets stored in bones. So it builds up over time."
+            },
+            {
+                "type": "freetext",
+                "body": "How much water input can the body deal with at once?",
+                "answer": "About 6 liters."
+            }
+        ]
+    },
+    {
+        "link": "https://www.youtube.com/watch?v=5Hb_ONJUA9I",
+        "name": "Iceland's superpowered underground volcanoes",
+        "tasks": [
+            {
+                "type": "freetext",
+                "body": "What source of energy is used to heat almost every building in Iceland?",
+                "answer": "Geothermal"
+            },
+            {
+                "type": "freetext",
+                "body": "How is the segment between the earths core and its crust called?",
+                "answer": "Mantle"
+            },
+            {
+                "type": "freetext",
+                "body": "In what range are the temperatures in the mantle?",
+                "answer": "1000 - 3500 degrees Celsius"
+            },
+            {
+                "type": "freetext",
+                "body": "Where does the heat in the mantle come from?",
+                "answer": "Some from the radioactive decay of metals and much of it from earths core."
+            },
+            {
+                "type": "freetext",
+                "body": "What role does water play when extracting heat from earth?",
+                "answer": "Generally, cold water goes down, heats up, and comes up when it is hot."
+            },
+            {
+                "type": "freetext",
+                "body": "What are the two main approaches for extracting geothermal energy?",
+                "answer": "Geothermal powerplant and heat pumps"
+            },
+            {
+                "type": "freetext",
+                "body": "How does a geothermal powerplant work?",
+                "answer": "Extracts hot steam from earths mantle, sends it through a generator and lets the cooled down water to back into the mantle. The generator generates electricity."
+            },
+            {
+                "type": "freetext",
+                "body": "How deep does one have to drill for such a powerplant?",
+                "answer": "Several kilometers"
+            },
+            {
+                "type": "freetext",
+                "body": "How deep does one have to drill to benefit from earths temperature?",
+                "answer": "Already a few meters under ground the temperature is quite stable and can be used to heat homes."
+            },
+            {
+                "type": "freetext",
+                "body": "How do geothermal heat pumps work?",
+                "answer": "Water or antifreeze liquid is pumped through earth a few meters deep. The warmed liquid is then pumped back up to distribute the heat."
+            },
+            {
+                "type": "freetext",
+                "body": "Do geothermal heat pumps need external electricity input?",
+                "answer": "yes"
+            },
+            {
+                "type": "freetext",
+                "body": "Why is the electricity used to pump the liquid not directly used to generate heat?",
+                "answer": "Extracting heat from earth is more efficient. The energy extracted is much more than the energy put into the system."
+            },
+            {
+                "type": "freetext",
+                "body": "How much energy does earth radiate on average?",
+                "answer": "About 3 times as much as used by humanity."
+            },
+            {
+                "type": "freetext",
+                "body": "How much of our energy comes from geothermal sources?",
+                "answer": "About 0.2%."
+            },
+            {
+                "type": "freetext",
+                "body": "Why is geothermal not used much more?",
+                "answer": "The cost effectiveness of geothermal sources highly depends on the location on earth."
+            },
+            {
+                "type": "freetext",
+                "body": "Approximately, how much does it cost to drill a few km deep for a geothermal powerplant?",
+                "answer": "Up to 20 million us dollars."
+            },
+            {
+                "type": "freetext",
+                "body": "What are possible negative side effects of drilling deep?",
+                "answer": "Could trigger earth quakes and release pollutions into the environment."
+            },
+            {
+                "type": "freetext",
+                "body": "What emerging technologies can help with these problems?",
+                "answer": "Emission control systems can capture pollutants and electrodynamic monitoring can help detect seismic risks."
+            }
+        ]
+    }
+]
