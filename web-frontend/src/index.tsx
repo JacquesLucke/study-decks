@@ -32,7 +32,7 @@ function AppHeader() {
                 <Link to="/about">About</Link>
               </li>
               <li>
-                <Link to="/deck/example">Example Deck</Link>
+                <Link to="/deck/0">Example Deck</Link>
               </li>
               <li>
                 <Link to="/">Home</Link>
