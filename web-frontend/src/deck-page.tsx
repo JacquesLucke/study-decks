@@ -35,11 +35,7 @@ async function get_deck_data(deck_id: string) {
 function DeckInfo({ deck_data }) {
   return (
     <div className="deck-info">
-      <p>You are learning:</p>
-      <p>How to do X?</p>
-      <hr />
-      <p>Author: {deck_data.author}</p>
-      <p>Questions: {deck_data.tasks.length}</p>
+      <a href={deck_data.link}>{deck_data.name}</a>
     </div>
   );
 }

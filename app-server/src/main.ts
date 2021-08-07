@@ -69,25 +69,7 @@ const init_server = async () => {
     handler: (request) => {
       const deck_id = request.params.deck_id;
       const study_deck = initial_study_decks[deck_id];
-      return {
-        author: "Jacques Lucke",
-        tasks: [
-          {
-            type: "multiple-choice",
-            question: study_deck.tasks[0].body,
-            answers: ["yes", "no", "maybe"],
-          },
-          {
-            type: "just-text",
-            text: `Just some text with ${request.params.deck_id}`,
-          },
-          {
-            type: "multiple-choice",
-            question: `Another question: ${request.params.deck_id}`,
-            answers: ["10%", "50%", "70%", "80%", "100%"],
-          },
-        ],
-      };
+      return study_deck;
     },
   });
 
