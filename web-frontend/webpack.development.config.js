@@ -9,6 +9,7 @@ module.exports = {
   output: {
     filename: "static/[name].bundle.js",
     chunkFilename: "static/[name].chunk.js",
+    assetModuleFilename: "static/[hash][ext][query]",
     path: Path.resolve(__dirname, "build"),
     publicPath: "/",
   },
@@ -26,6 +27,10 @@ module.exports = {
       {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.woff$/,
+        type: "asset/resource",
       },
     ],
   },
