@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "preserve",
     "sourceMap": true,
 
     // Needed so that dynamic imports are working.
     "module": "esnext",
+    "target": "ESNext",
 
     "moduleResolution": "node"
   }
