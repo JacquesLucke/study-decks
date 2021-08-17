@@ -17,10 +17,6 @@ const static_files_directory = Path.join(
   web_frontend_build_directory,
   "static"
 );
-const initial_study_decks = JSON.parse(
-  fs.readFileSync("./initial_study_decks.json", "utf-8")
-);
-console.log(initial_study_decks);
 
 console.log("Public Directory: " + public_directory);
 
@@ -60,16 +56,6 @@ const init_server = async () => {
         index: false,
         listing: false,
       },
-    },
-  });
-
-  server.route({
-    method: "GET",
-    path: "/api/deck/{deck_id}",
-    handler: (request) => {
-      const deck_id = request.params.deck_id;
-      const study_deck = initial_study_decks[deck_id];
-      return study_deck;
     },
   });
 
