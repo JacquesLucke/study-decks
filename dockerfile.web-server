@@ -1,4 +1,4 @@
-FROM node:lts-alpine AS build-frontend
+FROM node:16-alpine AS build-frontend
 
 WORKDIR /web-frontend
 
@@ -12,7 +12,7 @@ COPY ./web-frontend/ .
 RUN npm run build
 
 
-FROM node:lts-alpine AS build-app-server
+FROM node:16-alpine AS build-app-server
 
 WORKDIR /app-server
 
@@ -26,7 +26,7 @@ COPY ./app-server/ .
 RUN npm run build
 
 
-FROM node:lts-alpine AS app-server
+FROM node:16-alpine AS app-server
 
 EXPOSE 8000
 
