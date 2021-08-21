@@ -21,23 +21,23 @@ const FontFaces = createGlobalStyle`
 
 function App() {
   return (
-    <div>
+    <>
       <GlobalStyleReset />
       <FontFaces />
 
       <Header />
       <MainBody />
-    </div>
+    </>
   );
 }
 
 function MainBody() {
   return (
-    <div>
+    <>
       <DeckHeader />
       <DeckProgress />
       <TaskBody />
-    </div>
+    </>
   );
 }
 
@@ -128,5 +128,5 @@ function TaskBody() {
   );
 }
 
-const container = document.querySelector("#app-div");
+const container = document.querySelector("#app-root");
 ReactDom.render(<App />, container);

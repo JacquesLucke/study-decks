@@ -1,7 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 
-const StyledNav = styled.nav`
+const StyledHeader = styled.header`
   margin: 0 auto;
   max-width: 70rem;
   height: 3em;
@@ -18,7 +18,7 @@ const StudyDecksName = styled.div`
   padding-left: 1em;
 `;
 
-const StyledNavList = styled.div`
+const StyledNav = styled.nav`
   list-style: none;
   float: right;
   height: 100%;
@@ -27,7 +27,7 @@ const StyledNavList = styled.div`
   align-items: stretch;
 `;
 
-const NavElem = styled.div`
+const NavLink = styled.a`
   font-family: "Roboto";
   padding: 0 2em;
   transition: 0.1s;
@@ -49,14 +49,14 @@ const StyledSeparator = styled.div`
 export default function Header() {
   return (
     <>
-      <StyledNav>
+      <StyledHeader>
         <StudyDecksName>Study Decks</StudyDecksName>
-        <StyledNavList>
-          <NavElem>Home</NavElem>
-          <NavElem>About</NavElem>
-          <NavElem>Login</NavElem>
-        </StyledNavList>
-      </StyledNav>
+        <StyledNav>
+          <NavLink>Home</NavLink>
+          <NavLink>About</NavLink>
+          <NavLink>Login</NavLink>
+        </StyledNav>
+      </StyledHeader>
       <StyledSeparator />
     </>
   );
