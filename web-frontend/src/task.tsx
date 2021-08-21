@@ -8,6 +8,7 @@ export default function Task() {
         How are countries generally classified into rich and poor?
       </StyledTaskBody>
       <TextArea />
+      <ButtonRow />
     </>
   );
 }
@@ -15,8 +16,16 @@ export default function Task() {
 function TextArea() {
   return (
     <StyledTextAreaContainer>
-      <StyledTextArea rows={5} />
+      <StyledTextArea rows={2} />
     </StyledTextAreaContainer>
+  );
+}
+
+function ButtonRow() {
+  return (
+    <>
+      <StyledCheckButton>Check Answer</StyledCheckButton>
+    </>
   );
 }
 
@@ -46,4 +55,25 @@ const StyledTextArea = styled.textarea`
   padding: 0.2em;
   border-radius: 0.2em;
   border: 1px solid #aaa;
+`;
+
+const StyledCheckButton = styled.button`
+  padding: 1em;
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 0.2em;
+  max-width: 60rem;
+  width: 100%;
+  margin: 1em auto;
+  display: block;
+  font-size: 12pt;
+  font-family: "Roboto";
+
+  &:hover {
+    background-color: #bbb;
+  }
+
+  &:active {
+    background-color: #aaa;
+  }
 `;
