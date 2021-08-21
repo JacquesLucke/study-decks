@@ -2,6 +2,7 @@ import * as React from "react";
 import * as ReactDom from "react-dom";
 import styled, { createGlobalStyle, css } from "styled-components";
 import RobotoFont from "./fonts/Roboto/Roboto-Light-webfont.woff";
+import Header from "./header";
 
 const GlobalStyleReset = createGlobalStyle`
 * {
@@ -24,70 +25,9 @@ function App() {
       <GlobalStyleReset />
       <FontFaces />
 
-      <TopBar />
+      <Header />
       <MainBody />
     </div>
-  );
-}
-
-const TopBarNav = styled.nav`
-  margin: 0 auto;
-  max-width: 70rem;
-  height: 3em;
-`;
-
-const StudyDecksName = styled.div`
-  float: left;
-  font-family: "Roboto";
-  display: flex;
-  align-items: center;
-  height: 100%;
-  cursor: pointer;
-  font-size: large;
-  padding-left: 1em;
-`;
-
-const TopBarNavList = styled.div`
-  list-style: none;
-  float: right;
-  height: 100%;
-
-  display: flex;
-  align-items: stretch;
-`;
-
-const NavElem = styled.div`
-  font-family: "Roboto";
-  padding: 0 2em;
-  transition: 0.1s;
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-
-  &:hover {
-    color: #224;
-  }
-`;
-
-const TopBarSeparator = styled.div`
-  clear: both;
-  border-bottom: 1px solid #ddd;
-`;
-
-function TopBar() {
-  return (
-    <>
-      <TopBarNav>
-        <StudyDecksName>Study Decks</StudyDecksName>
-        <TopBarNavList>
-          <NavElem>Home</NavElem>
-          <NavElem>About</NavElem>
-          <NavElem>Login</NavElem>
-        </TopBarNavList>
-      </TopBarNav>
-      <TopBarSeparator />
-    </>
   );
 }
 
